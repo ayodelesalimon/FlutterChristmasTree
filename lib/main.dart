@@ -77,11 +77,25 @@ class _MyTreeState extends State<MyTree> {
             SizedBox(
               height: 20,
             ),
-            RaisedButton(
-              child: Text("Stop"),
-              onPressed: () {
-                audioPlayer.stop();
-              },
+            Container(
+              color: Colors.white,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  IconButton(
+                      icon: Icon(Icons.play_arrow,
+                        color: Colors.green,),
+                      onPressed: (){
+                        playMusic();
+                      }),
+                  IconButton(
+                      icon: Icon(Icons.stop,
+                      color: Colors.red,),
+                      onPressed: (){
+                        audioPlayer.stop();
+                      }),
+                ],
+              ),
             )
           ],
         ),
